@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo Atualizando nix.files && cp -r /etc/nixos/* ~/gitprojects/nixoFiles/main/ && cd ~/gitprojects/nixoFiles/main/ && l && git status
