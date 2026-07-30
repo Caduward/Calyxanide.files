@@ -13,6 +13,7 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	discord
 	obsidian
 	btop
 	firefox
@@ -40,7 +41,6 @@
 	unrar
 	unzip
 	zip
-	qemu_full
 	busybox
 	zerotierone
 	notepad-next

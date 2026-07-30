@@ -140,7 +140,7 @@
 	"nofail"
   ];
 };                                                                                  
-#------------OUTROS----------------
+#------------CONNECTION----------------------
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 25565 ];
   networking.firewall.allowedUDPPorts = [ 25565 ];
@@ -158,6 +158,8 @@
 	"cf719fd540a7815d"
  ];
 };
+  nix.sshServe.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDIIBcjCgZ5XVeK8CLElVQoGVW3EtOodbm+qLFRIIzyz cadu3195@gmail.com"];
+#---------------OUTROS----------------------------
   environment.sessionVariables = {
 	LIBVA_DRIVER_NAME = "iHD";
 	WLR_DRM_NO_ATOMIC = 1;
