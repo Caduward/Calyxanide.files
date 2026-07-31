@@ -17,7 +17,7 @@
 	obsidian
 	btop
 	firefox
-	neofetch
+	fastfetch
 	swaybg
 	swayimg
 	rofi
@@ -51,6 +51,7 @@
 	nodejs
 	jetbrains.webstorm
 	eclipses.eclipse-cpp
+	remmina
        ];
 #-----------------------CONFIGURACOES------------------
   imports = [
