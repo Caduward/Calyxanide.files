@@ -3,7 +3,7 @@
 {
 	home.username = "cadu";
 	home.homeDirectory = "/home/cadu";
-	home.stateVersion = "25.11";
+	home.stateVersion = "26.05";
 	programs.bash = {
 		enable = true;
 };
@@ -13,19 +13,16 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	fastfetch
 	discord
 	obsidian
 	btop
 	firefox
-	neofetch
 	swaybg
-	swayimg
 	rofi
-	easyeffects
 	grim
 	wl-color-picker
 	steam
-	gamemode
 	xfce.thunar
 	xfce.thunar-volman
 	xfce.thunar-archive-plugin
@@ -34,10 +31,7 @@
 	alsa-lib
 	alsa-utils
 	protonplus
-	vkbasalt
 	parted
-	krita
-	prismlauncher
 	unrar
 	unzip
 	zip
