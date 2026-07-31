@@ -109,6 +109,7 @@
 	"reboot" = "sudo systemctl reboot";
 	"nxup" = "sudo nix flake update";
 	"nxfps" = "./scripts/gitnixos";
+	"sshon" = "source /etc/nixos/scripts/activateSshAgent";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
