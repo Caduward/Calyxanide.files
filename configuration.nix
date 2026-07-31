@@ -30,7 +30,6 @@
    };
   programs.sway = {
 	enable = true;
-#	enableRealtime = true;
 };
   services.displayManager.ly.enable = true;
 #--------------------AUDIO----------------------------
@@ -120,8 +119,11 @@
 	"steam" = ''gamescope --expose-wayland --adaptive-sync -w 1920 -h 1080 -r 75 -b -- steam'';
 	"reboot" = "sudo systemctl reboot";
 	"nxup" = "sudo nix flake update";
-	"nxfps" = "/scripts/gitSendNixoFiles";
-	"sshon" = "source /etc/nixos/scripts/activateSshAgent";
+	"nixof" = "bash /etc/nixos/scripts/copyNixoFiles.sh";
+	"nixofp" = "bash /etc/nixos/scripts/sendNixoFiles.sh";
+	"sshon" = "source /etc/nixos/scripts/activateSshAgent.sh";
+	"rpgss" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
+	"rld" = "swaymsg reload";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
@@ -170,7 +172,6 @@
 	WLR_DRM_NO_DIRECT_SCANOUT=1;
 #	MESA_VK_WSI_PRESENT_MODE="mailbox";
 };
-#programs.sway.extraSessionCommands = {
 #-----------------------VERSAO--------------------------
   nix.settings = {
   experimental-features = [ "nix-command" "flakes" ];

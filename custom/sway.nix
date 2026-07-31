@@ -14,12 +14,12 @@
 in {
   wayland.windowManager.sway = {
 	enable = true;
-};
+  };
   wayland.windowManager.sway.package = "${pkgs.swayfx}";
   wayland.windowManager.sway.config = {
 	startup = [
 	{ command = "${pkgs.swaybg}/bin/swaybg -i ${wllp}"; }	
-];
+  ];
 	modes = {
 	  resize = {
 	    "a" = "resize shrink width 30 px";
@@ -28,8 +28,8 @@ in {
 	    "d" = "resize grow width 30 px";
 	    "Escape" = "mode default";
 	    "Return" = "mode default";
+    };
   };
-};
   floating.criteria = [
     {title = "Renomear";}
     {app_id = "org.pulseaudio.pavucontrol";}
@@ -44,7 +44,7 @@ in {
     {title = "Adicionar um jogo não Steam";}
     {title = "PagSeguro";}
 #    {title = "";}
-];
+  ];
   colors = {
     focused = {
       background = "#FEBC61";
@@ -67,7 +67,7 @@ in {
       indicator = "#D0C6B8";
       text = "#1D1512";
   };
-};
+  };
 	modifier = mod;
 	gaps.smartGaps = false;
 	gaps.inner = 10;
@@ -77,7 +77,7 @@ in {
 	style = "Bold";
 	names = ["iMWritingMonoNerdFontPropo"];
 #	size = 1.0;
-};
+  };
 #----------ATALHOS------------------
 	up = "w";
 	down = "s";
@@ -120,15 +120,17 @@ in {
 	"${mod3}+${mod}+a" = "move left";
 	"${mod3}+${mod}+s" = "move down";
 		"Print" = "exec ${foto}";
-};
+  };
 #------------TECLADO---------------
   input = {
   "*" = { 
   xkb_layout = "br";
   xkb_variant = "abnt2";
   repeat_delay = "220";
+  accel_profile = "flat";
+  pointer_accel = "0.4";
 	};
-};
+  };
 #------------MONITOR---------------
   output = {
 	"HDMI-A-3" = {
@@ -136,16 +138,11 @@ in {
     };
   };
 };
-
   wayland.windowManager.sway.extraConfig = ''
   default_border pixel none
   output * max_render_time 1
 #  output * allow_tearing yes
-  output * adaptive_sync on
-  input * {
-	accel_profile "flat"
-	pointer_accel 0.4
-}
+#  output * adaptive_sync on
 #---------------SWAYFX-----------------------
 #  blur enable
 #  blur_xray disable
@@ -154,7 +151,7 @@ in {
 #  blur_saturation 0.8
 #  blur_noise 0.1
   shadows enable
-  shadow_blur_radius 18
+  shadow_blur_radius 20
   layer_effects ${pkgs.i3status}/bini3status shadow
 	 		    '';
 #-----------------OUTROS-------------------

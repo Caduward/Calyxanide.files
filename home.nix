@@ -13,6 +13,9 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	gnome-online-accounts-gtk
+	drive
+	mako
 	discord
 	obsidian
 	btop
@@ -76,7 +79,6 @@
 	true_color = false;
   };
 #----------OUTROS-------------
-#  wayland.windowManager.sway.xwayland = false;
-  home.sessionVariables = {
-  };
+#  home.sessionVariables = {
+#  };
 }

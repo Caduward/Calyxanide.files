@@ -51,10 +51,10 @@ in {
 	format = "<span foreground='#F3B259'>☼%d/%m</span>";
 	    };
 	  };
-  "read_file cadu.txt" = {
+  "read_file sysname.txt" = {
 	position = 1;
 	settings = {
-	path = "/etc/nixos/cadu.txt";
+	path = "/etc/nixos/info/sysname.txt";
 	format = "<span foreground='#746250'>%content</span>";
 	    };
 	  };
