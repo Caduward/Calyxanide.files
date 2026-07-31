@@ -10,7 +10,7 @@
   run = "rofi -show run";
   drun = "rofi -show drun";
   foto = "grim -t png -l 1 -c";
-	wllp = "~/Images/wllp/dks.png";
+	wllp = "~/wllp/dks12.png";
 in {
   wayland.windowManager.sway = {
 	enable = true;
@@ -127,36 +127,17 @@ in {
   xkb_layout = "br";
   xkb_variant = "abnt2";
   repeat_delay = "220";
+  accel_profile = "flat";
+  pointer_accel = "0.4";
 	};
-};
-#------------MONITOR---------------
-  output = {
-	"HDMI-A-3" = {
-	mode = "1920x1080@74.973Hz";
-    };
   };
 };
-
+#------------MONITOR---------------
   wayland.windowManager.sway.extraConfig = ''
   default_border pixel none
   output * max_render_time 1
-#  output * allow_tearing yes
-  output * adaptive_sync on
-  input * {
-	accel_profile "flat"
-	pointer_accel 0.4
-}
-#---------------SWAYFX-----------------------
-#  blur enable
-#  blur_xray disable
-#  blur_passes 1 
-#  blur_radius 1
-#  blur_saturation 0.8
-#  blur_noise 0.1
-  shadows enable
-  shadow_blur_radius 18
-  layer_effects ${pkgs.i3status}/bini3status shadow
-	 		    '';
+  output * allow_tearing yes
+'';
 #-----------------OUTROS-------------------
   wayland.windowManager.sway.checkConfig = false;
   imports = [

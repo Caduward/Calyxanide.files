@@ -17,36 +17,37 @@ in {
 	};
   programs.i3status.modules = {
   "cpu_usage" = {
-	position = 4;
+	position = 3;
 	settings = {
 	  format = "<span foreground='#C37B55'>⚙CPU: %usage </span>";
 	    };
 	  };
   "memory" = {
-	position = 5;
+	position = 4;
 	settings = {
 	format = "<span foreground='#DBC399'>☸RAM: %used / %total</span>";};
 	  };
+
+  "battery 0" = {
+	position = 5;
+	settings = {
+	path = "/sys/class/power_supply/BAT0/uevent";
+	format = "<span foreground='#DBC399'>%percentage|%status|%consumption</span>";};
+	  };
   "time" = {
-	position = 7;
+	position = 6;
 	settings = {
 	format = "<span foreground='#B9E2CF'>⧗:%H:%M</span>";
 	    };
 	  };
   "disk ${root}" = {
-	position = 3;
+	position = 2;
 	settings = {
 	format = "<span foreground='#D5BEAC'>√root: %used/ %total</span>";
 	    }; 
 	  };
-  "disk ${nvme}" = {
-	position = 2;
-	settings = {
-	format = "<span foreground='#EBFEC2'>▥NVME: %used/ %total</span>";
-	    }; 
-	  };
   "tztime local" = {
-	position = 6;
+	position = 7;
 	settings = {
 	format = "<span foreground='#F3B259'>☼%d/%m</span>";
 	    };
@@ -64,7 +65,7 @@ in {
 	position = "bottom";
 	fonts = {
 	  names = ["MartianMonoNerdFontMono"];
-	  size = 13.0;
+	  size = 12.0;
 	  };
 	  trayOutput = "none";
 	  statusCommand = "/etc/profiles/per-user/cadu/bin/i3status";
