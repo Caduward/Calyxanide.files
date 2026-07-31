@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+echo "###Enviando calyxanide.files###" && cp -r /etc/nixos/* ~/gitprojects/nixoFiles/main/ && cd ~/gitprojects/nixoFiles/main/ && ls -A && git add . && git status && git commit -C HEAD && git push && echo "### SHOW ###"
