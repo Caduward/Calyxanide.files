@@ -120,7 +120,8 @@
 	"steam" = ''gamescope --expose-wayland --adaptive-sync -w 1920 -h 1080 -r 75 -b -- steam'';
 	"reboot" = "sudo systemctl reboot";
 	"nxup" = "sudo nix flake update";
-	"gitnixos" = "./scripts/gitnixos";
+	"nxfps" = "/scripts/gitSendNixoFiles";
+	"sshon" = "source /etc/nixos/scripts/activateSshAgent";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
