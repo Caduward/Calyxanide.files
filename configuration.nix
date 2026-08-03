@@ -124,7 +124,7 @@
 	"nixofcopy" = "bash /etc/nixos/scripts/copyNixoFiles.sh";
 	"nixofpush" = "source /etc/nixos/scripts/sendNixoFiles.sh";
 	"sshon" = "source /etc/nixos/scripts/activateSshAgent.sh";
-	"rpgcopy" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
+	"rpgcopy" = "source /etc/nixos/scripts/copyRPGSheet.sh";
 	"swr" = "swaymsg reload";
 	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";

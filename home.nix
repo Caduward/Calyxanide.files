@@ -51,10 +51,11 @@
 	p7zip
 	image-roll
 	vlc
-	nodejs
 	jetbrains.webstorm
 	eclipses.eclipse-cpp
        ];
+#--------OFF--------
+# 	nodejs
 #-----------------------CONFIGURACOES------------------
   imports = [
 	./custom/sway.nix
