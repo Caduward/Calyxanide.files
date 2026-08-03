@@ -142,6 +142,8 @@ in {
 #------------MONITOR---------------
   wayland.windowManager.sway.extraConfig = ''
   default_border pixel none
+#  output * allow_tearing no
+#  output * max_render_time 1
 '';
 #-----------------OUTROS-------------------
   wayland.windowManager.sway.checkConfig = false;

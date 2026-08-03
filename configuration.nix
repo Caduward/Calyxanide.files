@@ -80,8 +80,6 @@
 	(with pkgs-unstable; [
 	legcord
 	openjdk21
-	intel-media-driver
-	libva-vdpau-driver
 	]);
 #------OFF-------
 #	openjdk21
@@ -152,11 +150,12 @@ fileSystems."/mnt/portatil" = {
 };
 #---------------OUTROS----------------------------
   environment.sessionVariables = {
-	WLR_DRM_NO_ATOMIC = 1;
-	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
-	WLR_DRM_NO_DIRECT_SCANOUT=1;
+#	WLR_DRM_NO_ATOMIC = 1;
+#	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
+#	WLR_DRM_NO_DIRECT_SCANOUT=1;
 	LIBVA_DRIVER_NAME = "iHD";
 	MOZ_ENABLE_WAYLAND = "1";
+	WLR_RENDERER = "gles2";
 };
 #----------VM----------
 virtualisation.virtualbox.host.enable = true;

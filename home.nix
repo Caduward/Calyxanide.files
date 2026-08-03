@@ -13,6 +13,9 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	teamspeak6-client
+	gamemode
+	protonplus
 	gthumb
 	easyeffects
 	prismlauncher
