@@ -27,7 +27,6 @@
 	firefox
 	fastfetch
 	swaybg
-	swayimg
 	rofi
 	grim
 	steam
