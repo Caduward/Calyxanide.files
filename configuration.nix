@@ -128,7 +128,7 @@
 	"swr" = "swaymsg reload";
 	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
-	"obspush" = "source /etc/nixos/scripts/sendoObsidian.sh";
+	"obspush" = "source /etc/nixos/scripts/sendObsidian.sh";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
