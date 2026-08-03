@@ -154,6 +154,8 @@ xdg.portal = {
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
 	"obspush" = "source /etc/nixos/scripts/sendObsidian.sh";
 	"vs" = "mesa_glthread=true gamemoderun vintagestory";
+	"cpush" = "source /etc/nixos/scripts/sendCTPs.sh";
+	"cpull" = "source /etc/nixos/scripts/pullCTPs.sh";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------

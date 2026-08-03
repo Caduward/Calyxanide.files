@@ -44,6 +44,8 @@ in {
     {title = "Adicionar um jogo não Steam";}
     {title = "PagSeguro";}
     {class = "ij-ImageJ";}
+    {class = "XTerm";}
+    {app_id = "org.gnome.gThumb";}
   ];
   colors = {
     focused = {

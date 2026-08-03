@@ -51,9 +51,9 @@
 	zerotierone
 	notepad-next
 	p7zip
-	image-roll
 	vlc
 	lutris
+	gthumb
        ];
 #-----------------------CONFIGURACOES------------------
   imports = [

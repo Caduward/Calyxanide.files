@@ -2,7 +2,7 @@
 
 pkgs.mkShell {
   buildInputs =(with pkgs; [
-  geany
+  geany.all
   gnumake
   gdb
   gcc
