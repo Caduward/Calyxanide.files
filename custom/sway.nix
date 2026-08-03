@@ -45,6 +45,7 @@ in {
     {title = "PagSeguro";}
     {class = "ij-ImageJ";}
     {class = "XTerm";}
+    {class = "foot";}
     {app_id = "org.gnome.gThumb";}
   ];
   colors = {
