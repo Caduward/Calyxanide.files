@@ -17,7 +17,6 @@
 	libreoffice
 	findutils
 	file
-	mako
 	discord
 	obsidian
 	btop
@@ -27,7 +26,7 @@
 	swayimg
 	rofi
 	grim
-	wl-color-picker
+	bella
 	steam
 	gamemode
 	thunar
@@ -54,9 +53,8 @@
 	vlc
 	jetbrains.webstorm
 	eclipses.eclipse-cpp
+	nodejs
        ];
-#--------OFF--------
-# 	nodejs
 #-----------------------CONFIGURACOES------------------
   imports = [
 	./custom/sway.nix
@@ -78,6 +76,31 @@
 	theme_background = false;
 	color_theme = "gruvbox_dark";
 	true_color = false;
+  };
+  services.mako = {
+    enable = true;
+      settings = {
+	actions = true;
+	anchor = "top-right";
+	background-color = "#000000";
+	border-color = "#FFFFFF";
+	border-radius = 1;
+	default-timeout = 5;
+	font = "monospace 10";
+	height = 100;
+	width = 300;
+	ignore-timeout = false;
+	icons = true;
+	layer = "top";
+	margin = 5;
+	markup = true; 
+  };
+};
+  programs.micro = {
+    enable = true;
+#    settings = {
+	
+#    };
   };
 #----------OUTROS-------------
 #  home.sessionVariables = {

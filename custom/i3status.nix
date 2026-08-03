@@ -16,40 +16,47 @@ in {
 	color_bad = "#ba0000";
 	};
   programs.i3status.modules = {
-  "cpu_usage" = {
-	position = 4;
+  "time" = {
+	position = 8;
 	settings = {
-	  format = "<span foreground='#C37B55'>⚙CPU: %usage </span>";
+	format = "<span foreground='#B9E2CF'>⧗:%H:%M</span>";
+	    };
+	  };
+  "tztime local" = {
+	position = 7;
+	settings = {
+	format = "<span foreground='#F3B259'>☼%d/%m</span>";
+	    };
+	  };
+  "read_file swap.txt" = {
+	position = 6;
+	settings = {
+	path = "/etc/nixos/info/swap.txt";
+	format = "<span foreground='#ff3c1c'>Swap:%content/4.5G</span>";
 	    };
 	  };
   "memory" = {
 	position = 5;
 	settings = {
-	format = "<span foreground='#DBC399'>☸RAM: %used / %total</span>";};
+	format = "<span foreground='#DBC399'>☸RAM:%used/%total</span>";};
 	  };
-  "time" = {
-	position = 7;
+  "cpu_usage" = {
+	position = 4;
 	settings = {
-	format = "<span foreground='#B9E2CF'>⧗:%H:%M</span>";
+	  format = "<span foreground='#C37B55'>⚙CPU:%usage</span>";
 	    };
 	  };
   "disk ${root}" = {
 	position = 3;
 	settings = {
-	format = "<span foreground='#D5BEAC'>√root: %used/ %total</span>";
+	format = "<span foreground='#D5BEAC'>√root:%used/%total</span>";
 	    }; 
 	  };
   "disk ${nvme}" = {
 	position = 2;
 	settings = {
-	format = "<span foreground='#EBFEC2'>▥NVME: %used/ %total</span>";
+	format = "<span foreground='#EBFEC2'>▥NVME:%used/%total</span>";
 	    }; 
-	  };
-  "tztime local" = {
-	position = 6;
-	settings = {
-	format = "<span foreground='#F3B259'>☼%d/%m</span>";
-	    };
 	  };
   "read_file sysname.txt" = {
 	position = 1;
@@ -64,12 +71,12 @@ in {
 	position = "bottom";
 	fonts = {
 	  names = ["MartianMonoNerdFontMono"];
-	  size = 13.0;
+	  size = 12.0;
 	  };
 	  trayOutput = "none";
 	  statusCommand = "/etc/profiles/per-user/cadu/bin/i3status";
 	colors = {
-	  background = "#3C2C1F";
+	  background = "#261c14";
 	  statusline = "#FFC75A";
 	  activeWorkspace = {
 		border = "#FE431D";

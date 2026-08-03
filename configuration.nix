@@ -1,6 +1,10 @@
 { config, lib, pkgs, nixpkgs, pkgs-unstable, ... }:
-
-{
+let
+showSwap = pkgs.writeShellScript "showSwap" ''
+export PATH="${pkgs.busybox}/bin:${pkgs.procps}/bin:"
+free -h | grep Swap: | tr -s " " | cut -d " " -f 3 | tee /etc/nixos/info/swap.txt
+'';
+in {
   imports =
     [
 	./hardware-configuration.nix
@@ -31,11 +35,18 @@
   programs.sway = {
 	enable = true;
 };
+xdg.portal = {
+	wlr.enable = true;
+	enable = true;
+};	
 #------------SERVICES--------------------------
   services.locate.enable = true;
   services.displayManager.ly.enable = true;
   services.cron = {
     enable = true;
+    systemCronJobs = [
+      "*/1 * * * * root ${showSwap}"
+  ];
 };
 #--------------------AUDIO----------------------------
    services.pipewire = {
@@ -78,14 +89,13 @@
 	swayfx
 	alacritty
 	pavucontrol
-	i3blocks
-	rclone
+	virtualbox
+	ntfs3g
 	]) ++
 	(with pkgs-unstable; [
 	wireplumber
 	pipewire
 	tmux
-	fuse3
 	mesa
 	libva
 	intel-media-driver
@@ -162,9 +172,6 @@
   networking.firewall.interfaces."ztdiytqva5".allowedUDPPorts = [ 25565 ];
   networking.firewall.trustedInterfaces = [ "ztdiytqva5" ];
   services.logrotate.checkConfig = false;
-  xdg.portal.wlr = {
-	enable = true;	
-};
   services.zerotierone = {
 	enable = true;
 	port = 9993;
