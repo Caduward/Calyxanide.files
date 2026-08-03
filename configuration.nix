@@ -121,13 +121,14 @@
 	"steam" = ''gamescope --expose-wayland --adaptive-sync -w 1920 -h 1080 -r 75 -b -- steam'';
 	"reboot" = "sudo systemctl reboot";
 	"nxup" = "sudo nix flake update";
-	"nixof" = "bash /etc/nixos/scripts/copyNixoFiles.sh";
-	"nixofp" = "bash /etc/nixos/scripts/sendNixoFiles.sh";
+	"nixofcopy" = "bash /etc/nixos/scripts/copyNixoFiles.sh";
+	"nixofpush" = "source /etc/nixos/scripts/sendNixoFiles.sh";
 	"sshon" = "source /etc/nixos/scripts/activateSshAgent.sh";
-	"rpgss" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
-	"rld" = "swaymsg reload";
-	"obc" = "bash /etc/nixos/scripts/copyObsidianVault";
-	"obp" = "source /etc/nixos/scripts/pullObsidianVault";
+	"rpgcopy" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
+	"swr" = "swaymsg reload";
+	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
+	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
+	"obspush" = "source /etc/nixos/scripts/sendoObsidian.sh";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
