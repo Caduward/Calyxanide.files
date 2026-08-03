@@ -13,8 +13,7 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
-	gnome-online-accounts-gtk
-	drive
+	file
 	mako
 	discord
 	obsidian
@@ -54,7 +53,6 @@
 	nodejs
 	jetbrains.webstorm
 	eclipses.eclipse-cpp
-	remmina
        ];
 #-----------------------CONFIGURACOES------------------
   imports = [

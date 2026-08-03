@@ -152,8 +152,11 @@ in {
 #  blur_noise 0.1
   shadows enable
   shadow_blur_radius 20
-  layer_effects ${pkgs.i3status}/bini3status shadow
-	 		    '';
+
+  for_window [app_id="obsidian"] {
+    shadow enable
+    shadow_blur_radius 20
+}	 		    '';
 #-----------------OUTROS-------------------
   wayland.windowManager.sway.checkConfig = false;
   imports = [

@@ -74,8 +74,10 @@
 	alacritty
 	pavucontrol
 	i3blocks
+	rclone
 	]) ++
 	(with pkgs-unstable; [
+	fuse3
 	mesa
 	libva
 	intel-media-driver
@@ -124,6 +126,8 @@
 	"sshon" = "source /etc/nixos/scripts/activateSshAgent.sh";
 	"rpgss" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
 	"rld" = "swaymsg reload";
+	"obc" = "bash /etc/nixos/scripts/copyObsidianVault";
+	"obp" = "source /etc/nixos/scripts/pullObsidianVault";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
