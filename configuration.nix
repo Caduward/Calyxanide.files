@@ -106,7 +106,6 @@
 	"cfg" = ''cd ~/.config/ && ls'';
 	"sgt" = ''swaymsg -t get_tree'';
 	"fonts" = "fc-list";
-	"steam" = ''gamescope --expose-wayland --adaptive-sync -w 1920 -h 1080 -r 75 -b -- steam'';
 	"reboot" = "sudo systemctl reboot";
 	"nxup" = "sudo nix flake update";
 	"nixofcopy" = "bash /etc/nixos/scripts/copyNixoFiles.sh";

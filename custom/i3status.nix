@@ -25,17 +25,17 @@ in {
   "memory" = {
 	position = 4;
 	settings = {
-	format = "<span foreground='#DBC399'>☸RAM: %used / %total</span>";};
+	format = "<span foreground='#DBC399'>☸RAM: %used / %total</span>";
 	  };
-
+	};
   "battery 0" = {
 	position = 5;
 	settings = {
 	path = "/sys/class/power_supply/BAT0/uevent";
-	format = "<span foreground='#DBC399'>%percentage|%status|%consumption</span>";};
+	format = "<span foreground='#DBC399'>%percentage|%consumption</span>";};
 	  };
   "time" = {
-	position = 6;
+	position = 7;
 	settings = {
 	format = "<span foreground='#B9E2CF'>⧗:%H:%M</span>";
 	    };
@@ -47,7 +47,7 @@ in {
 	    }; 
 	  };
   "tztime local" = {
-	position = 7;
+	position = 8;
 	settings = {
 	format = "<span foreground='#F3B259'>☼%d/%m</span>";
 	    };
@@ -59,13 +59,20 @@ in {
 	format = "<span foreground='#746250'>%content</span>";
 	    };
 	  };
+#  "wireless wlan0" = {
+#	position = 6;
+#	settings = {
+#	format_up = "<span foreground='#FFDFA8'>%quality|%essid</span>";
+#	format_down = "<span foreground='#FFDFA8'>OFF</span>";
+#	    };
+#	  };
 	};
   wayland.windowManager.sway.config.bars = [
       {
 	position = "bottom";
 	fonts = {
 	  names = ["MartianMonoNerdFontMono"];
-	  size = 12.0;
+	  size = 11.0;
 	  };
 	  trayOutput = "none";
 	  statusCommand = "/etc/profiles/per-user/cadu/bin/i3status";

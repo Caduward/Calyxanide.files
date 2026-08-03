@@ -124,8 +124,8 @@ in {
 	"${mod3}+${mod}+s" = "move down";
 		"Print" = "exec ${foto}";
 	"Shift+F9" = "exec ${suspend}";
-	"Shift+F5" = "exec ${brightp}";
-	"Shift+F6" = "exec ${brightm}";
+	"Shift+F6" = "exec ${brightp}";
+	"Shift+F5" = "exec ${brightm}";
 };
 #------------TECLADO---------------
   input = {
