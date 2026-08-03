@@ -1,2 +1,0 @@
-#!/usr/bin/env bash
-echo "###Atualizando nix.files###" && cp -r /etc/nixos/* ~/gitprojects/nixoFiles/ && cd ~/gitprojects/nixoFiles/ && ls -A && git add . && git commit -C HEAD && git push -u origin terminus
