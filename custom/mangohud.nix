@@ -25,7 +25,9 @@
   gpu_name = true;
   gamemode = true;
   refresh_rate = true;
-  vkbasalt = true; 
+  vkbasalt = true;
+  gpu_fan = true;
+  gpu_core_clock = true; 
    };
  };
 #

@@ -43,7 +43,7 @@ in {
     {title = "Servidores";}
     {title = "Adicionar um jogo não Steam";}
     {title = "PagSeguro";}
-#    {title = "";}
+    {class = "ij-ImageJ";}
   ];
   colors = {
     focused = {
@@ -152,8 +152,7 @@ in {
 #  blur_noise 0.1
   shadows enable
   shadow_blur_radius 20
-
-  for_window [app_id="obsidian"] {
+    for_window [app_id="obsidian"] {
     shadow enable
     shadow_blur_radius 20
 }	 		    '';

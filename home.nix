@@ -13,6 +13,11 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	teamspeak6-client
+	obs-studio
+	avogadro2
+	xdelta
+	melonds
 	imagej
 	libreoffice
 	findutils

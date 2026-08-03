@@ -10,6 +10,11 @@
   };
   programs.gamemode = {
     enable = true;
+    settings = {
+	general = {
+	  renice = 10;
+      };
+    };
   };
   programs.gamescope = {
     enable = true;

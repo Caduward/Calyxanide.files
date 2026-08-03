@@ -42,6 +42,7 @@ xdg.portal = {
 #------------SERVICES--------------------------
   services.locate.enable = true;
   services.displayManager.ly.enable = true;
+  services.lact.enable = true;
   services.cron = {
     enable = true;
     systemCronJobs = [
@@ -76,6 +77,8 @@ xdg.portal = {
        tree
      ];
    };
+  virtualisation.virtualbox.host.enable = true;
+  users.extraGroups.vboxusers.members = [ "cadu" ];
 #-----------------PACOTES DE SISTEMA------------------------------
    nixpkgs.config = {
 	allowUnfreePredicate = (pkg: true);
@@ -84,13 +87,18 @@ xdg.portal = {
 };
    environment.systemPackages =
 	(with pkgs; [
+	vagrant
 	wget
 	git
 	swayfx
 	alacritty
 	pavucontrol
-	virtualbox
+	bc
 	ntfs3g
+	lm_sensors
+	lact
+	vpl-gpu-rt
+	glmark2
 	]) ++
 	(with pkgs-unstable; [
 	wireplumber
@@ -99,13 +107,13 @@ xdg.portal = {
 	mesa
 	libva
 	intel-media-driver
-	vpl-gpu-rt
 	mangohud
 	intel-gpu-tools
 	intel-compute-runtime
 	gamescope
 	legcord
 	openjdk21
+	openjdk8
 	easyeffects
 	]);
   fonts = {
@@ -163,6 +171,16 @@ xdg.portal = {
 	options = [
 	"nofail"
   ];
+};
+   fileSystems."~/VMs/VM1" = {
+	device = "/dev/disk/by-label/VM1";
+	fsType = "ext4";
+	options = [
+	"nofail"
+	"users"
+	"rw"
+	"exec"
+  ];
 };                                                                                  
 #------------CONNECTION----------------------
   networking.firewall.enable = true;
@@ -184,7 +202,7 @@ xdg.portal = {
 	LIBVA_DRIVER_NAME = "iHD";
 	WLR_DRM_NO_ATOMIC = 1;
 	WLR_NO_HARDWARE_CURSORS = 1;
-#	WLR_RENDERER = "vulkan";
+	WLR_RENDERER = "vulkan";
 	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
 	WLR_DRM_NO_DIRECT_SCANOUT=1;
 };
