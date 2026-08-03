@@ -13,6 +13,7 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	findutils
 	file
 	mako
 	discord
@@ -28,11 +29,11 @@
 	wl-color-picker
 	steam
 	gamemode
-	xfce.thunar
-	xfce.thunar-volman
-	xfce.thunar-archive-plugin
-	xfce.thunar-media-tags-plugin
-	xfce.tumbler
+	thunar
+	thunar-volman
+	thunar-archive-plugin
+	thunar-media-tags-plugin
+	tumbler
 	alsa-lib
 	alsa-utils
 	protonplus

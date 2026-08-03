@@ -31,6 +31,7 @@
   programs.sway = {
 	enable = true;
 };
+  services.locate.enable = true;
   services.displayManager.ly.enable = true;
 #--------------------AUDIO----------------------------
    services.pipewire = {
@@ -77,6 +78,7 @@
 	rclone
 	]) ++
 	(with pkgs-unstable; [
+	tmux
 	fuse3
 	mesa
 	libva
@@ -89,7 +91,6 @@
 	legcord
 	openjdk21
 	limo
-#	vintagestory
 	]);
   fonts = {
   enableDefaultPackages = true;
@@ -97,7 +98,6 @@
 	nerd-fonts.sauce-code-pro
 	nerd-fonts.martian-mono
 	nerd-fonts.lilex
-	perl538Packages.TextLayout
 	pango
 ];
   fontconfig = {
@@ -166,7 +166,6 @@
 	"cf719fd540a7815d"
  ];
 };
-  nix.sshServe.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDIIBcjCgZ5XVeK8CLElVQoGVW3EtOodbm+qLFRIIzyz cadu3195@gmail.com"];
 #---------------OUTROS----------------------------
   environment.sessionVariables = {
 	LIBVA_DRIVER_NAME = "iHD";
