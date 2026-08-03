@@ -13,6 +13,7 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	krita
 	teamspeak6-client
 	gamemode
 	protonplus
