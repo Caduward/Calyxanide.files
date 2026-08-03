@@ -56,11 +56,9 @@
 	p7zip
 	vlc
 	jetbrains.webstorm
-	eclipses.eclipse-cpp
        ];
 #----OFF----
 #	nodejs
-#	protonplus
 #-----------------------CONFIGURACOES------------------
   imports = [
 	./custom/sway.nix

@@ -1,5 +1,4 @@
 { config, lib, pkgs, nixpkgs, pkgs-unstable, ... }:
-
 {
   imports =
     [
@@ -76,13 +75,13 @@
 	alacritty
 	pavucontrol
 	lm_sensors
+	eclipses.eclipse-cpp
 	]) ++
 	(with pkgs-unstable; [
 	legcord
 	openjdk21
 	]);
 #------OFF-------
-#	openjdk21
   fonts = {
   enableDefaultPackages = true;
   packages = with pkgs; [
