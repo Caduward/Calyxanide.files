@@ -119,16 +119,18 @@
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
 	"obspush" = "source /etc/nixos/scripts/sendObsidian.sh";
 	"wf" = "sudo bash /etc/nixos/scripts/displayWIFI.sh";
+	"cpush" = "source /etc/nixos/scripts/sendCTPs.sh";
+	"cpull" = "source /etc/nixos/scripts/pullCTPs.sh";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
-fileSystems."/mnt/portatil" = {
-	device = "/dev/disk/by-uuid/16FB7BF4728A79D2";
-	fsType = "ntfs";
-	options = [
-	"nofail"
-  ];
-};                   
+#fileSystems."/mnt/portatil" = {
+#	device = "/dev/disk/by-uuid/16FB7BF4728A79D2";
+#	fsType = "ntfs";
+#	options = [
+#	"nofail"
+#  ];
+#};                   
 #------------CONNECTION----------------------
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 25565 ];

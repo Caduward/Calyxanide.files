@@ -47,7 +47,7 @@ in {
     {title = "Servidores";}
     {title = "Adicionar um jogo não Steam";}
     {title = "PagSeguro";}
-#    {title = "";}
+    {class = "XTerm";}
 ];
   colors = {
     focused = {
