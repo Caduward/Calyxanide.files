@@ -175,7 +175,6 @@
 #	WLR_RENDERER = "vulkan";
 	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
 	WLR_DRM_NO_DIRECT_SCANOUT=1;
-#	MESA_VK_WSI_PRESENT_MODE="mailbox";
 };
 #-----------------------VERSAO--------------------------
   nix.settings = {
