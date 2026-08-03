@@ -78,8 +78,9 @@
 	(with pkgs-unstable; [
 	intel-compute-runtime
 	legcord
-	openjdk21
 	]);
+#------OFF-------
+#	openjdk21
   fonts = {
   enableDefaultPackages = true;
   packages = with pkgs; [
@@ -111,7 +112,7 @@
 	"nixofcopy" = "bash /etc/nixos/scripts/copyNixoFiles.sh";
 	"nixofpush" = "source /etc/nixos/scripts/sendNixoFiles.sh";
 	"sshon" = "source /etc/nixos/scripts/activateSshAgent.sh";
-	"rpgcopy" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
+	"rpgcopy" = "source /etc/nixos/scripts/copyRPGSheet.sh";
 	"swr" = "swaymsg reload";
 	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
@@ -151,7 +152,7 @@
   keep-outputs = true;
   keep-derivations = true;
   max-jobs = "auto";
-  cores = 0;
+  cores = 2;
 };
   security.allowSimultaneousMultithreading = lib.mkForce true;
   system.stateVersion = "26.05"; 

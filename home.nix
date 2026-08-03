@@ -13,7 +13,9 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
-	remmina
+	file
+	micro-full
+	libreoffice
 	fastfetch
 	discord
 	obsidian
@@ -24,14 +26,13 @@
 	grim
 	wl-color-picker
 	steam
-	xfce.thunar
-	xfce.thunar-volman
-	xfce.thunar-archive-plugin
-	xfce.thunar-media-tags-plugin
-	xfce.tumbler
+	thunar
+	thunar-volman
+	thunar-archive-plugin
+	thunar-media-tags-plugin
+	tumbler
 	alsa-lib
 	alsa-utils
-	protonplus
 	parted
 	unrar
 	unzip
@@ -43,10 +44,12 @@
 	p7zip
 	image-roll
 	vlc
-	nodejs
 	jetbrains.webstorm
 	eclipses.eclipse-cpp
        ];
+#----OFF----
+#	nodejs
+#	protonplus
 #-----------------------CONFIGURACOES------------------
   imports = [
 	./custom/sway.nix

@@ -134,7 +134,7 @@ in {
   xkb_variant = "abnt2";
   repeat_delay = "220";
   accel_profile = "flat";
-  pointer_accel = "0.4";
+  pointer_accel = "0.5";
 	};
   };
 };
