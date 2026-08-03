@@ -31,6 +31,7 @@
   programs.sway = {
 	enable = true;
 };
+  services.locate.enable = true;
   services.displayManager.ly.enable = true;
 #--------------------AUDIO----------------------------
    services.pipewire = {
@@ -44,10 +45,11 @@
       extraConfig.pipewire = {
 	"default-clock-rate" = {
 	  "context.properties" = {
-	    "default.clock.rate" = 192000;
-	    "default.clock.quantum" = 256;
-	    "default.clock.min-quantum" = 256;
-	    "default.clock.allowed-rates" = [ 44100 48000 88200 96000 192000 ];
+	    "default.clock.rate" = 48000;
+	    "default.clock.quantum" = 1024;
+	    "default.clock.min-quantum" = 1024;
+	    "default.clock.max-quantum" = 2048;
+#	    "default.clock.allowed-rates" = [ 44100 48000 88200 96000 192000 ];
 	  };
         };
       };
@@ -73,11 +75,13 @@
 	sway
 	alacritty
 	pavucontrol
-	i3blocks
+	lm_sensors
 	]) ++
 	(with pkgs-unstable; [
-	intel-compute-runtime
 	legcord
+	openjdk21
+	intel-media-driver
+	libva-vdpau-driver
 	]);
 #------OFF-------
 #	openjdk21
@@ -117,11 +121,17 @@
 	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
 	"obspush" = "source /etc/nixos/scripts/sendObsidian.sh";
+	"wf" = "sudo bash /etc/nixos/scripts/displayWIFI.sh";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
-#
-#                     
+fileSystems."/mnt/portatil" = {
+	device = "/dev/disk/by-uuid/16FB7BF4728A79D2";
+	fsType = "ntfs";
+	options = [
+	"nofail"
+  ];
+};                   
 #------------CONNECTION----------------------
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 25565 ];
@@ -135,24 +145,28 @@
 };
   services.zerotierone = {
 	enable = true;
-#	port = 9993;
-#	joinNetworks = [
-#	"cf719fd540a7815d"
-# ];
+	port = 9993;
+	joinNetworks = [
+	"cf719fd540a7815d"
+ ];
 };
 #---------------OUTROS----------------------------
   environment.sessionVariables = {
 	WLR_DRM_NO_ATOMIC = 1;
 	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
 	WLR_DRM_NO_DIRECT_SCANOUT=1;
+	LIBVA_DRIVER_NAME = "iHD";
+	MOZ_ENABLE_WAYLAND = "1";
 };
+#----------VM----------
+virtualisation.virtualbox.host.enable = true;
 #-----------------------VERSAO--------------------------
   nix.settings = {
   experimental-features = [ "nix-command" "flakes" ];
   keep-outputs = true;
   keep-derivations = true;
-  max-jobs = "auto";
-  cores = 2;
+#  max-jobs = "auto";
+#  cores = 4;
 };
   security.allowSimultaneousMultithreading = lib.mkForce true;
   system.stateVersion = "26.05"; 

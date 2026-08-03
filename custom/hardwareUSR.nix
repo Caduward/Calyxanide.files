@@ -9,6 +9,8 @@
 boot.kernel.sysctl = {
 	"net.ipv4.ip_foward" = 1;
 #	"vm.swappiness" = 30;
-}; 
+};
+powerManagement.cpuFreqGovernor = "performance"; 
+# ondemand powersave performance
 #
 }

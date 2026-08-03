@@ -39,6 +39,7 @@ in {
     {app_id = "com.github.weclaw1.ImageRoll";}
     {app_id = "net.davidotek.pupgui2";}
     {app_id = "swayimg";}
+    {app_id = "org.gnome.gThumb";}
     {title = "Confirmar substituição de arquivos";}
     {title = "Andamento da operação de arquivo";}
     {title = "Lista de amigos";}
@@ -134,14 +135,13 @@ in {
   xkb_variant = "abnt2";
   repeat_delay = "220";
   accel_profile = "flat";
-  pointer_accel = "0.5";
+  pointer_accel = "0.6";
 	};
   };
 };
 #------------MONITOR---------------
   wayland.windowManager.sway.extraConfig = ''
   default_border pixel none
-  output * max_render_time 1
 '';
 #-----------------OUTROS-------------------
   wayland.windowManager.sway.checkConfig = false;

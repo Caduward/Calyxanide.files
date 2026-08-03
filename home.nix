@@ -13,7 +13,15 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	gthumb
+	easyeffects
+	prismlauncher
+	avogadro2
+	wl-mirror
+	findutils
+	imagej
 	file
+	mako
 	micro-full
 	libreoffice
 	fastfetch
@@ -42,7 +50,6 @@
 	notepad-next
 	gimp
 	p7zip
-	image-roll
 	vlc
 	jetbrains.webstorm
 	eclipses.eclipse-cpp

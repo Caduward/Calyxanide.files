@@ -19,20 +19,20 @@ in {
   "cpu_usage" = {
 	position = 3;
 	settings = {
-	  format = "<span foreground='#C37B55'>⚙CPU: %usage </span>";
+	  format = "<span foreground='#C37B55'>⚙CPU:%usage</span>";
 	    };
 	  };
   "memory" = {
 	position = 4;
 	settings = {
-	format = "<span foreground='#DBC399'>☸RAM: %used / %total</span>";
+	format = "<span foreground='#DBC399'>☸RAM:%used/%total</span>";
 	  };
 	};
   "battery 0" = {
 	position = 5;
 	settings = {
 	path = "/sys/class/power_supply/BAT0/uevent";
-	format = "<span foreground='#DBC399'>%percentage|%consumption</span>";};
+	format = "<span foreground='#DBC399'>B:%percentage|%consumption</span>";};
 	  };
   "time" = {
 	position = 7;
@@ -43,7 +43,7 @@ in {
   "disk ${root}" = {
 	position = 2;
 	settings = {
-	format = "<span foreground='#D5BEAC'>√root: %used/ %total</span>";
+	format = "<span foreground='#D5BEAC'>√root:%used/%total</span>";
 	    }; 
 	  };
   "tztime local" = {
@@ -52,33 +52,33 @@ in {
 	format = "<span foreground='#F3B259'>☼%d/%m</span>";
 	    };
 	  };
-  "read_file cadu.txt" = {
+  "read_file bar.txt" = {
 	position = 1;
 	settings = {
-	path = "/etc/nixos/cadu.txt";
+	path = "/etc/nixos/info/bar.txt";
 	format = "<span foreground='#746250'>%content</span>";
 	    };
 	  };
-#  "wireless wlan0" = {
-#	position = 6;
-#	settings = {
-#	format_up = "<span foreground='#FFDFA8'>%quality|%essid</span>";
-#	format_down = "<span foreground='#FFDFA8'>OFF</span>";
-#	    };
-#	  };
+  "read_file wifi.txt" = {
+	position = 6;
+	settings = {
+	path = "/etc/nixos/info/wifi.txt";
+	format = "<span foreground='#983834'>%content</span>";
+	    };
+	  };
 	};
   wayland.windowManager.sway.config.bars = [
       {
 	position = "bottom";
 	fonts = {
 	  names = ["MartianMonoNerdFontMono"];
-	  size = 11.0;
+	  size = 10.0;
 	  };
 	  trayOutput = "none";
 	  statusCommand = "/etc/profiles/per-user/cadu/bin/i3status";
 	colors = {
-	  background = "#3C2C1F";
-	  statusline = "#FFC75A";
+	  background = "#2b2017";
+	  statusline = "#F9EBAC";
 	  activeWorkspace = {
 		border = "#FE431D";
 		background = "#413329";
