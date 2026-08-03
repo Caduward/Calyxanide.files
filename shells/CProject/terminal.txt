@@ -1,0 +1,1 @@
+/etc/profiles/per-user/cadu/bin/alacritty -e /bin/sh %c
