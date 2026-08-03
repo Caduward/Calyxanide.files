@@ -75,7 +75,6 @@
 	alacritty
 	pavucontrol
 	lm_sensors
-	eclipses.eclipse-cpp
 	]) ++
 	(with pkgs-unstable; [
 	legcord

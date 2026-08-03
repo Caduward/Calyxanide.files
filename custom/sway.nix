@@ -48,6 +48,7 @@ in {
     {title = "Adicionar um jogo não Steam";}
     {title = "PagSeguro";}
     {class = "XTerm";}
+    {class = "foot";}
 ];
   colors = {
     focused = {

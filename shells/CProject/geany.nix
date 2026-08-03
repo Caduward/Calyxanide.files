@@ -8,6 +8,7 @@ pkgs.mkShell {
   gcc
   valgrind
   cmake
+  foot
 ]);
 #shellHook = ''
 #  export GTK_THEME="Gruvbox-Dark"
