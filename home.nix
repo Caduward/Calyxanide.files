@@ -13,6 +13,8 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	imagej
+	libreoffice
 	findutils
 	file
 	mako
@@ -24,7 +26,6 @@
 	swaybg
 	swayimg
 	rofi
-	easyeffects
 	grim
 	wl-color-picker
 	steam

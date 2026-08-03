@@ -31,8 +31,12 @@
   programs.sway = {
 	enable = true;
 };
+#------------SERVICES--------------------------
   services.locate.enable = true;
   services.displayManager.ly.enable = true;
+  services.cron = {
+    enable = true;
+};
 #--------------------AUDIO----------------------------
    services.pipewire = {
       audio.enable = true;
@@ -78,6 +82,8 @@
 	rclone
 	]) ++
 	(with pkgs-unstable; [
+	wireplumber
+	pipewire
 	tmux
 	fuse3
 	mesa
@@ -90,7 +96,7 @@
 	gamescope
 	legcord
 	openjdk21
-	limo
+	easyeffects
 	]);
   fonts = {
   enableDefaultPackages = true;
