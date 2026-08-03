@@ -10,6 +10,9 @@
   run = "rofi -show run";
   drun = "rofi -show drun";
   foto = "grim -t png -l 1 -c";
+  suspend = "systemctl suspend";
+  brightp = "exec brightnessctl set 5%+";
+  brightm =  "exec brightnessctl set 5%-";
 	wllp = "~/wllp/dks12.png";
 in {
   wayland.windowManager.sway = {
@@ -120,6 +123,9 @@ in {
 	"${mod3}+${mod}+a" = "move left";
 	"${mod3}+${mod}+s" = "move down";
 		"Print" = "exec ${foto}";
+	"Shift+F9" = "exec ${suspend}";
+	"Shift+F5" = "exec ${brightp}";
+	"Shift+F6" = "exec ${brightm}";
 };
 #------------TECLADO---------------
   input = {
@@ -136,7 +142,6 @@ in {
   wayland.windowManager.sway.extraConfig = ''
   default_border pixel none
   output * max_render_time 1
-  output * allow_tearing yes
 '';
 #-----------------OUTROS-------------------
   wayland.windowManager.sway.checkConfig = false;

@@ -106,29 +106,22 @@
 	"cfg" = ''cd ~/.config/ && ls'';
 	"sgt" = ''swaymsg -t get_tree'';
 	"fonts" = "fc-list";
+	"steam" = ''gamescope --expose-wayland --adaptive-sync -w 1920 -h 1080 -r 75 -b -- steam'';
 	"reboot" = "sudo systemctl reboot";
 	"nxup" = "sudo nix flake update";
-	"nxfps" = "./scripts/gitnixos";
-	"sshon" = "source /etc/nixos/scripts/activateSshAgent";
+	"nixofcopy" = "bash /etc/nixos/scripts/copyNixoFiles.sh";
+	"nixofpush" = "source /etc/nixos/scripts/sendNixoFiles.sh";
+	"sshon" = "source /etc/nixos/scripts/activateSshAgent.sh";
+	"rpgcopy" = "bash /etc/nixos/scripts/copyRPGSheet.sh";
+	"swr" = "swaymsg reload";
+	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
+	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
+	"obspush" = "source /etc/nixos/scripts/sendObsidian.sh";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
-#   fileSystems."/boot" = {
-#	device = "/dev/disk/by-label/refind";
-#	fsType = "vfat";
-#	options = [
-#	"users"
-#	"nofail"
-#	"defaults"
-#   ];
-#};
-#   fileSystems."/mnt/nvme" = {
-#	device = "/dev/disk/by-label/NVLINUX";
-#	fsType = "ext4";
-#	options = [
-#	"nofail"
-#  ];
-#};                                                                                  
+#
+#                     
 #------------CONNECTION----------------------
   networking.firewall.enable = true;
   networking.firewall.allowedTCPPorts = [ 25565 ];
@@ -143,22 +136,16 @@
   services.zerotierone = {
 	enable = true;
 #	port = 9993;
-	joinNetworks = [
-	"cf719fd540a7815d"
- ];
+#	joinNetworks = [
+#	"cf719fd540a7815d"
+# ];
 };
-#  nix.sshServe.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDIIBcjCgZ5XVeK8CLElVQoGVW3EtOodbm+qLFRIIzyz cadu3195@gmail.com"];
 #---------------OUTROS----------------------------
   environment.sessionVariables = {
-#	LIBVA_DRIVER_NAME = "iHD";
 	WLR_DRM_NO_ATOMIC = 1;
-#	WLR_NO_HARDWARE_CURSORS = 1;
-#	WLR_RENDERER = "vulkan";
 	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
 	WLR_DRM_NO_DIRECT_SCANOUT=1;
-#	MESA_VK_WSI_PRESENT_MODE="mailbox";
 };
-#programs.sway.extraSessionCommands = {
 #-----------------------VERSAO--------------------------
   nix.settings = {
   experimental-features = [ "nix-command" "flakes" ];

@@ -13,6 +13,7 @@
 	settings.user.email = "cadu3195@gmail.com";
 };
    home.packages = with pkgs;[
+	remmina
 	fastfetch
 	discord
 	obsidian
