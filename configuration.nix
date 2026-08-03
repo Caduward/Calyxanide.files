@@ -79,12 +79,14 @@ xdg.portal = {
    };
   virtualisation.virtualbox.host.enable = true;
   users.extraGroups.vboxusers.members = [ "cadu" ];
-#-----------------PACOTES DE SISTEMA------------------------------
+  virtualisation.spiceUSBRedirection.enable = true;
+##-----------------PACOTES DE SISTEMA------------------------------
    nixpkgs.config = {
 	allowUnfreePredicate = (pkg: true);
 	allowUnfree = true;
 	allowUnfreeRedistributable = true;
 };
+
    environment.systemPackages =
 	(with pkgs; [
 	vagrant
@@ -93,28 +95,26 @@ xdg.portal = {
 	swayfx
 	alacritty
 	pavucontrol
-	bc
 	ntfs3g
-	lm_sensors
-	lact
-	vpl-gpu-rt
-	glmark2
+	gcc
 	]) ++
 	(with pkgs-unstable; [
+	libva-utils
+	lm_sensors
+	vpl-gpu-rt
+	mesa-demos
+	vulkan-tools
+	mesa
 	wireplumber
 	pipewire
 	tmux
-	mesa
-	libva
-	intel-media-driver
 	mangohud
-	intel-gpu-tools
-	intel-compute-runtime
 	gamescope
 	legcord
 	openjdk21
 	openjdk8
 	easyeffects
+	vintagestory
 	]);
   fonts = {
   enableDefaultPackages = true;
@@ -153,6 +153,7 @@ xdg.portal = {
 	"obscopy" = "bash /etc/nixos/scripts/copyObsidianVault.sh";
 	"obspull" = "source /etc/nixos/scripts/pullObsidianVault.sh";
 	"obspush" = "source /etc/nixos/scripts/sendObsidian.sh";
+	"vs" = "mesa_glthread=true gamemoderun vintagestory";
 	};
 };
 #--------------------FSTAB-FILESYSTEM---------------------
@@ -199,12 +200,13 @@ xdg.portal = {
 };
 #---------------OUTROS----------------------------
   environment.sessionVariables = {
-	LIBVA_DRIVER_NAME = "iHD";
 	WLR_DRM_NO_ATOMIC = 1;
 	WLR_NO_HARDWARE_CURSORS = 1;
 	WLR_RENDERER = "vulkan";
-	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
+#	WLR_SCENE_DISABLE_DIRECT_SCANOUT = 1;
 	WLR_DRM_NO_DIRECT_SCANOUT=1;
+	AMD_VULKAN_ICD = "RADV";
+	NIXOS_OZONE_WL = "1";
 };
 #-----------------------VERSAO--------------------------
   nix.settings = {

@@ -28,6 +28,7 @@
   vkbasalt = true;
   gpu_fan = true;
   gpu_core_clock = true; 
+  gpu_power = true;
    };
  };
 #

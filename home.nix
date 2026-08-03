@@ -17,7 +17,6 @@
 	obs-studio
 	avogadro2
 	xdelta
-	melonds
 	imagej
 	libreoffice
 	findutils
@@ -31,7 +30,6 @@
 	swayimg
 	rofi
 	grim
-	bella
 	steam
 	gamemode
 	thunar
@@ -52,13 +50,10 @@
 	busybox
 	zerotierone
 	notepad-next
-	gimp
 	p7zip
 	image-roll
 	vlc
-	jetbrains.webstorm
-	eclipses.eclipse-cpp
-	nodejs
+	lutris
        ];
 #-----------------------CONFIGURACOES------------------
   imports = [

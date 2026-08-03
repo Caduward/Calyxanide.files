@@ -4,11 +4,12 @@
     enable = true;
     enable32Bit = true;
   };
- boot.kernelPackages = pkgs.linuxPackages_latest;
- boot.kernelParams = [
-"modprobe.blacklist=i915"
-];
-boot.kernel.sysctl = {
+ boot.kernelPackages = pkgs.linuxPackages_xanmod_latest;
+# boot.kernelParams = [];
+ boot.kernelModules = [
+ "amdgpu"
+];  
+ boot.kernel.sysctl = {
 	"net.ipv4.ip_foward" = 1;
 	"vm.swappiness" = 30;
 }; 
